@@ -1,0 +1,27 @@
+.divBox{	
+	
+	font-size:18pt;
+	line-height:30px;
+	
+    }
+    	
+tr{
+	 background:pink;
+	 padding:10px;
+	 height:40px;
+}
+
+tr input[type=text], tr input[type=password]{
+	line-height:20px;
+	heigth:35px;
+	margin:10px;
+	width:200px;
+	}
+	
+ input [type=button]{
+		padding: 5px;
+		font-size: 16pt;
+		
+	}
+    	
+   
