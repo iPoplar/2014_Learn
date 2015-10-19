@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>Lesson23-BlogSystem</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <session-config>
+    <session-timeout>60</session-timeout>
+  </session-config>
+  <filter>
+    <display-name>HelloFiter</display-name>
+    <filter-name>HelloFiter</filter-name>
+    <filter-class>com.mec.filter.HelloFiter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>HelloFiter</filter-name>
+    <url-pattern>/servlet/main/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>HelloFiter</filter-name>
+    <url-pattern>/main/*</url-pattern>
+  </filter-mapping>
+  <listener>
+    <listener-class>com.mec.listener.TestListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>com.mec.listener.AttributeListener</listener-class>
+  </listener>
+  <servlet>
+    <description></description>
+    <display-name>DispacherServlet</display-name>
+    <servlet-name>DispacherServlet</servlet-name>
+    <servlet-class>com.mec.servlet.DispacherServlet</servlet-class>
+  </servlet>
+ <!--  <servlet-mapping>
+    <servlet-name>DispacherServlet</servlet-name>
+    <url-pattern>*.ctrl</url-pattern>
+  </servlet-mapping> -->
+  <filter>
+    <display-name>DispacherFilter</display-name>
+    <filter-name>DispacherFilter</filter-name>
+    <filter-class>com.mec.filter.DispacherFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>DispacherFilter</filter-name>
+    <url-pattern>*.ctrl</url-pattern>
+  </filter-mapping>
+</web-app>

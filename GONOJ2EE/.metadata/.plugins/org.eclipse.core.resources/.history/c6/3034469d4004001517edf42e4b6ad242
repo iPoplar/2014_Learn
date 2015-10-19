@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<action-map>
+	<!-- 
+		action reqStr    action Class
+			String String
+			String String
+		
+		action reqStr    action Class
+			String String
+			String String
+			
+		action reqStr    action Class
+			String String
+			String String	
+	 -->
+<!-- 	<action>
+		<name></name>
+		<class></class>
+		<initParameter>
+			<name></name>
+			<value></value>
+		</initParameter>
+		
+		<initParameter>
+			<name></name>
+			<value></value>
+		</initParameter>
+	</action> -->
+	
+	<action name="loginAction"  class="com.mec.controller.LoginAction">
+		<result name="FAILURE">./msgPage/error/loginError.jsp</result>
+		<result name="SUCCESS">./main/main.jsp</result>
+	</action>
+	
+	<action name="registAction"  class="com.mec.controller.RegistAction">
+		<result name="FAILURE">./msgPage/error/RegistError.jsp</result>
+		<result name="SUCCESS">./login.jsp</result>
+	</action>
+</action-map>

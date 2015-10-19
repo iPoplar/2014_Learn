@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="./resources/css/style.css" rel="stylesheet">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function onBtnRegistClick(){
+		window.location = "./regist.html";
+	}
+
+	function onBtnLoginClick(){
+		var userName;
+		var password;
+
+		var frmObj = document.getElementById("frmLogin");
+		frmObj.submit();
+	}
+</script>
+</head>
+<body style="position:absolute;height:100%;width:100%;left: 0px;top:0px;margin:0px;">
+	<div style="margin:0px auto;position:relative;height:100%;width:400px;">
+		<form id="frmLogin" action="loginAction.ctrl" method="post">
+			<table style="position:absolute;width:400px;top:calc(50% - 150px);left:0px;">
+				<tr class="trline">
+					<td colspan="2" align="center" style="font-size:18pt;font-weight:bold;height:50px">欢迎使用微易码博客系统</td>
+				</tr>
+				<tr class="trline">
+					<td align="right">用户名</td>
+					<td>
+						<input name="userName" id="tbUserName" type="text">
+					</td>
+				</tr>
+				<tr class="trline">
+					<td align="right">密码</td>
+					<td>
+						<input name="password" id="tbPassword" type="password">
+					</td>
+				</tr>
+				<tr class="trline">
+					<td colspan="2" align="center">
+						<input type="button" value="登陆" onclick="onBtnLoginClick();">
+						<input type="button" value="注册" onclick="onBtnRegistClick();">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

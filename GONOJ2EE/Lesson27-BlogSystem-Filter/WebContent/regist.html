@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="./resources/css/style.css" rel="stylesheet">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function onBtnBackClick(){
+		window.location = "./index.html";
+	}
+
+	function onBtnSubmitClick(){
+		var userName;
+		var password;
+		var age;
+		var sex;
+		var introduction;
+	
+		var frmObj = document.getElementById("frmRegist");
+		frmObj.submit();
+	}
+</script>
+</head>
+<body>
+	<div style="margin:0px auto;position:relative;height:100%;width:400px;">
+		<form id="frmRegist" action="./servlet/regsitServlet" method="post">
+			<table style="position:absolute;width:400px;top:50px;left:0px;">
+				<tr class="trline">
+					<td colspan="2" align="center" style="font-size:18pt;font-weight:bold;height:50px">欢迎注册</td>
+				</tr>
+				<tr class="trline">
+					<td align="right">用户名</td>
+					<td>
+						<input name="userName" id="tbUsreName" type="text">
+					</td>
+				</tr>
+				<tr class="trline">
+					<td align="right">密码</td>
+					<td>
+						<input name="password" id="tbPassword" type="password">
+					</td>
+				</tr>
+				
+				<tr class="trline">
+					<td align="right">密码确认</td>
+					<td>
+						<input type="password">
+					</td>
+				</tr>
+				
+				<tr class="trline">
+					<td align="right">年龄</td>
+					<td>
+						<input name="age" id="tbAge" type="text">
+					</td>
+				</tr>
+				
+				<tr class="trline">
+					<td align="right">性别</td>
+					<td>
+						<input id="rdSexMale" type="radio" checked="true" name="rdSex" value="male"><label for="rdSexMale">男</label> 
+						<input id="rdSexFemale" type="radio" name="rdSex"><label for="rdSexFemale" value="female">女</label> 
+					</td>
+				</tr>
+				
+				<tr class="trline">
+					<td align="right">自我介绍</td>
+					<td>
+						<textarea name="introduction" id="taIntroduction" rows="5" cols="40"></textarea>
+					</td>
+				</tr>
+				<tr class="trline">
+					<td colspan="2" align="center">
+						<input type="button" value="提交" onclick="onBtnSubmitClick();">
+						<input type="button" value="返回" onclick="onBtnBackClick();">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+	.trline{
+		background:pink; 
+		padding:10px;
+		height:40px;
+	}
+	
+	.trline input[type=text],.trline input[type=password]{
+		height:25px;
+		margin-left:10px;
+		width:200px;
+	}

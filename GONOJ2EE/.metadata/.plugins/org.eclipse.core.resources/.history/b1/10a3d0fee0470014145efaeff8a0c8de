@@ -1,0 +1,34 @@
+package cn.bmy.jaxp;
+
+import java.io.File;
+import java.io.IOException;
+
+import javax.swing.text.Document;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.xml.sax.SAXException;
+
+public class Demo1 
+{
+	/**
+	 * 使用jaxp操作xml文档
+	 * @author bai
+	 * @throws ParserConfigurationException 
+	 * @throws IOException 
+	 * @throws SAXException 
+	 */
+	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException 
+	{
+		//1.获取工厂
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		//2.产生解析器
+		DocumentBuilder  builder = factory.newDocumentBuilder();
+		//3.解析xml文档，得到代表文档中的decument
+		org.w3c.dom.Document document = builder.parse(new File("/src/book.xml"));
+		
+		
+	}
+
+}

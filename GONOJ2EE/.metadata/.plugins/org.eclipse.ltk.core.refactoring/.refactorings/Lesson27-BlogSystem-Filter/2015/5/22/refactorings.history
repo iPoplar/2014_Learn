@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy source folder &apos;servlet-api.jar&apos; to &apos;lib&apos;&#x0D;&#x0A;- Original project: &apos;Lesson27-BlogSystem-Filter&apos;&#x0D;&#x0A;- Destination element: &apos;lib&apos;&#x0D;&#x0A;- Original element: &apos;Lesson27-BlogSystem-Filter/WebContent/WEB-INF/lib/servlet-api.jar&apos;" description="Copy source folder" element1="/WebContent\/WEB-INF\/lib\/servlet-api.jar" flags="6" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyRoots" roots="1" stamp="1432711657984" target="/Lesson29-BlogSystem/WebContent/WEB-INF/lib" version="1.0"/>
+</session>
