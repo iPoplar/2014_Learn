@@ -1,0 +1,54 @@
+package cn.bmy.test;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class RegistServet extends HttpServlet 
+{
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException 
+	{
+		this.doPost(request, response);
+		
+	}
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException 
+	{
+		String userName = request.getParameter("userName");
+		String password = request.getParameter("password");
+		String sex = request.getParameter("sex");
+		String age = request.getParameter("age");
+		PrintWriter out = response.getWriter();
+		
+		try 
+		{
+			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+			Connection conn = DriverManager.getConnection("jdbc:odbc:bmyServletDB");
+			String sql = "insert into user_base_info (user_name, password, sex, age) values "
+				+ "('"+ userName +"', '"+ password +"', "+ "male".equals(sex) 
+				+", "+ new Integer(age) +") ";
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.execute();
+			conn.close();
+		} catch (ClassNotFoundException e) 
+		{
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		out.println("<h1>×¢²á³É¹¦</h1>");
+	}
+
+}

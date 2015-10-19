@@ -1,0 +1,8 @@
+package com.yang.biz;
+
+import com.yang.entity.Memberinfo;
+
+public interface MemberBiz {
+	public int doRegister(Memberinfo member);
+	public Memberinfo doLogin(Memberinfo member);
+}

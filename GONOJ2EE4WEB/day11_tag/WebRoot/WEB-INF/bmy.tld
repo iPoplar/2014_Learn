@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+    
+    <description>A tag library exercising SimpleTag handlers.</description>
+    <tlib-version>1.0</tlib-version>
+    <short-name>SimpleTagLibrary</short-name>
+    <uri>/bmy</uri>
+    
+    
+    <tag>
+        <name>ViewIP</name>  <!-- 为标签处理器类配一个标签名 -->
+		<tag-class>cn.bmy.web.tag.WebViewIp</tag-class>
+		<body-content>empty</body-content>
+    </tag>
+    
+      <tag>
+    	<name>demo1</name>
+    	<tag-class>cn.bmy.web.tag.TagDemo1</tag-class>
+    	<body-content>JSP</body-content>
+    </tag>
+    
+    <tag>
+    	<name>demo2</name>
+    	<tag-class>cn.bmy.web.tag.TagDemo2</tag-class>
+    	<body-content>empty</body-content>
+    </tag>
+    
+     <tag>
+    	<name>demo3</name>
+    	<tag-class>cn.bmy.web.tag.TagDemo3</tag-class>
+    	<body-content>JSP</body-content>
+    </tag>
+    
+    <tag>
+    	<name>demo4</name>
+    	<tag-class>cn.bmy.web.tag.TagDemo4</tag-class>
+    	<body-content>JSP</body-content>
+    </tag>
+    
+    
+</taglib>

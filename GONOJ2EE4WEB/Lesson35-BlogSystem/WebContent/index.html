@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="./resources/css/style.css" rel="stylesheet">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function onBtnRegistClick(){
+		window.location = "./regist.html";
+	}
+	
+	/*
+		Ajax 的 登陆请求成功返回之后调用该方法 ， 该方法做后续处理 
+		@param responseText 从服务器返回的 JSON 字符串
+	*/
+	function success(responseText){
+		var cmdStr = "var jsonObj = " + responseText;
+
+		window.eval(cmdStr);
+
+		if(jsonObj.errorCode === "000000"){
+			alert("登陆成功,点击确定就打开主界面");
+			window.location = "./main/main.jsp";
+		}else{
+			alert("登陆失败：" + jsonObj.errorMsg);
+		}
+	}
+
+	function failure(responseText){
+		alert(responseText);
+	}
+	
+	function onBtnLoginClick(){
+		var userName = document.getElementById("tbUserName").value;
+		var password = document.getElementById("tbPassword").value;
+
+		/* var frmObj = document.getElementById("frmLogin");
+		frmObj.submit(); */
+
+		var xmlRequest = new XMLHttpRequest();
+
+		xmlRequest.open("post", "./login.action", true);
+		xmlRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+		xmlRequest.onreadystatechange = function(){
+			if(xmlRequest.readyState === 4){
+				if(xmlRequest.status >= 200 && xmlRequest.status < 400){
+					success(xmlRequest.responseText);
+				}else{
+					failure(xmlRequest.responseText);
+				}
+			}
+		};
+		
+		xmlRequest.send("userName=" + userName + "&password=" + password);
+	}
+</script>
+</head>
+<body style="position:absolute;height:100%;width:100%;left: 0px;top:0px;margin:0px;">
+	<div style="margin:0px auto;position:relative;height:100%;width:400px;">
+		<form id="frmLogin" action="./login.action" method="post">
+			<table style="position:absolute;width:400px;top:calc(50% - 150px);left:0px;">
+				<tr class="trline">
+					<td colspan="2" align="center" style="font-size:18pt;font-weight:bold;height:50px">欢迎使用微易码博客系统</td>
+				</tr>
+				<tr class="trline">
+					<td align="right">用户名</td>
+					<td>
+						<input name="userName" id="tbUserName" type="text">
+					</td>
+				</tr>
+				<tr class="trline">
+					<td align="right">密码</td>
+					<td>
+						<input name="password" id="tbPassword" type="password">
+					</td>
+				</tr>
+				<tr class="trline">
+					<td colspan="2" align="center">
+						<input type="button" value="登陆" onclick="onBtnLoginClick();">
+						<input type="button" value="注册" onclick="onBtnRegistClick();">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+                        "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib><!-- 缺少taglib的描述 -->
+ <tlib-version>1.0</tlib-version>
+ <jsp-version>1.2</jsp-version>
+ <short-name>bmytag</short-name>
+ 
+ <tag>
+ 	<name>hello</name>
+ 	<tag-class>cn.bmy.customtag.CustomTag</tag-class>
+ 	<body-content>tagdependent</body-content>
+ 	<attribute>
+ 		<name>name</name>
+ 		<required>true</required><!-- 指定该属性是否必须 -->
+ 		<rtexprvalue>false</rtexprvalue><!-- 指定该属性是否是个运行时的属性类型，如果设置为true，则属性可以是运行时的表达式 -->
+ 	</attribute>
+ </tag>
+</taglib>
+

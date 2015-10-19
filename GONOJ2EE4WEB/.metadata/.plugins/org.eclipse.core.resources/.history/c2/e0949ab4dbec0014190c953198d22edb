@@ -1,0 +1,38 @@
+package com.yang.servlet;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.yang.biz.RelativeBiz;
+import com.yang.biz.SafetyBiz;
+import com.yang.biz.impl.RelativeBizImpl;
+import com.yang.biz.impl.SafetyBizImpl;
+import com.yang.entity.Relativeinfo;
+import com.yang.entity.Safetyinfo;
+
+public class RelativeServlet extends HttpServlet {
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+			this.doPost(request, response);
+	}
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		//Ñ°Ç×
+			RelativeBiz relativeBiz=new RelativeBizImpl();
+			List<Relativeinfo> list=relativeBiz.getAll();
+			request.getSession().setAttribute("relativeList", list);
+		//±¨Æ½°²
+			SafetyBiz safetyBiz=new SafetyBizImpl();
+			List<Safetyinfo> safetyList=safetyBiz.getAll();
+			request.getSession().setAttribute("safetyList", safetyList);
+			response.sendRedirect("main.jsp");
+	}
+
+}

@@ -1,0 +1,31 @@
+								JSP
+====================================								
+在jsp中九大隐式对象中out 、pageContext对象属于特有。
+	 jsp中的字符流不能与字节流同时出现，否则会抛异常；
+	 	解决抛异常方法：
+	 		将模板代码块全部去掉，包括前后的空格，全部去掉！（也即不使用生成的out对象）
+====================================
+动态包含和静态包含:
+	<@include>
+	<jps:include page=""/>
+	
+	静态包含会翻译成一个servlet		，公用的jsp最好将模板部分去掉，以免形成的代码混乱
+	动态包含会翻译成多个servlet	 		
+	
+	<jps:include page=""/>还可以接收一个表达式：
+		eg：		<%
+						String url = "/public/head.jsp";
+					%>
+					<jsp:include page="<%=url %>"/>
+====================================
+映射jsp
+eg:	将一个7.jsp映射成7.html
+		<servlet>
+			<servlet-name>xxx</servlet-name>
+			<jsp-file>/7.jsp</jsp-file>
+		</servlet>		
+		
+		<servlet-mapping>
+			<servlet-name>xxx</servlet-name>
+			<url-pattern>/7.html</url-pattern>
+		</servlet-mapping>

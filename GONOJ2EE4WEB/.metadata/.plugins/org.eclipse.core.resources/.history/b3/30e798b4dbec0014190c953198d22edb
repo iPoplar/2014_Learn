@@ -1,0 +1,57 @@
+package com.yang.entity;
+
+import java.io.Serializable;
+
+public class Relativeinfo implements Serializable {
+	private int  relativeId; 
+	private String  reName; 
+	private String  reAge; 
+	private String  reSex; 
+	private String  reContent; 
+	private String  rePerson; 
+	private String  rePhone;
+	public int getRelativeId() {
+		return relativeId;
+	}
+	public void setRelativeId(int relativeId) {
+		this.relativeId = relativeId;
+	}
+	public String getReName() {
+		return reName;
+	}
+	public void setReName(String reName) {
+		this.reName = reName;
+	}
+	public String getReAge() {
+		return reAge;
+	}
+	public void setReAge(String reAge) {
+		this.reAge = reAge;
+	}
+	public String getReSex() {
+		return reSex;
+	}
+	public void setReSex(String reSex) {
+		this.reSex = reSex;
+	}
+	public String getReContent() {
+		return reContent;
+	}
+	public void setReContent(String reContent) {
+		this.reContent = reContent;
+	}
+	public String getRePerson() {
+		return rePerson;
+	}
+	public void setRePerson(String rePerson) {
+		this.rePerson = rePerson;
+	}
+	public String getRePhone() {
+		return rePhone;
+	}
+	public void setRePhone(String rePhone) {
+		this.rePhone = rePhone;
+	}
+	
+	
+}

@@ -1,0 +1,10 @@
+package com.yang.biz;
+
+import java.util.List;
+
+import com.yang.entity.Relativeinfo;
+
+public interface RelativeBiz {
+	public int addRelative(Relativeinfo relative);
+	public List<Relativeinfo> getAll();
+}

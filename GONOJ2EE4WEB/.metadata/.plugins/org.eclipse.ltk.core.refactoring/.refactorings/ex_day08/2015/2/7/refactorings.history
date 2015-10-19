@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;/ex_day08/src/readme.txt&apos; to &apos;Jsp.txt&apos;&#x0D;&#x0A;- Original project: &apos;ex_day08&apos;&#x0D;&#x0A;- Original element: &apos;readme.txt&apos;" description="Rename resource &apos;readme.txt&apos;" flags="7" id="org.eclipse.jdt.ui.rename.resource" input="src/readme.txt" name="Jsp.txt" stamp="1423366663473" version="1.0"/>
+</session>

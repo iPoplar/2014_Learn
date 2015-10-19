@@ -1,0 +1,34 @@
+package com.yang.dao.impl;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.yang.dao.BaseDao;
+import com.yang.dao.SafetyDao;
+import com.yang.entity.Safetyinfo;
+
+public class SafetyDaoImpl extends BaseDao implements SafetyDao {
+
+	public List<Safetyinfo> getAll() {
+		List<Safetyinfo> list=new ArrayList<Safetyinfo>();
+		String sql="select * from safety";
+		rs=this.execQuery(sql, null);
+		try {
+			while(rs.next()){
+				Safetyinfo safetyinfo=new Safetyinfo();
+				safetyinfo.setSafetId(rs.getInt("safetId"));
+				safetyinfo.setSaName(rs.getString("saName"));
+				safetyinfo.setSaSex(rs.getString("saSex"));
+				safetyinfo.setSaAge(rs.getString("saAge"));
+				safetyinfo.setSaContent(rs.getString("saContent"));
+				safetyinfo.setSaAddr(rs.getString("saAddr"));
+				list.add(safetyinfo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+}

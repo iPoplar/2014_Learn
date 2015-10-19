@@ -1,0 +1,9 @@
+package com.yang.dao;
+
+import java.util.List;
+
+import com.yang.entity.Safetyinfo;
+
+public interface SafetyDao {
+public  List<Safetyinfo> getAll();
+}

@@ -1,0 +1,12 @@
+1414300700683	Extract interface 'UserDao'
+1414300862287	Delete element
+1414300937414	Extract interface 'UserDao'
+1414301122925	Move compilation unit
+1414301424821	Rename type 'Dao'
+1414302705639	Rename type 'UserDaoText'
+1414315795594	Copy file
+1414315806461	Delete element
+1414316543725	Copy file
+1414317446841	Extract interface 'BusinessService'
+1414317467638	Move compilation unit
+1414317631908	Delete element

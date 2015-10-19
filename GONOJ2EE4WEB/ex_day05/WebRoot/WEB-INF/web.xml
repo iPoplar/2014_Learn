@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" 
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	
+	<context-param>
+		<param-name>url</param-name>
+		<param-value>jdbc:mysql://localhost:3306/test</param-value>
+	</context-param>
+	
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ServletDemo</servlet-name>
+    <servlet-class>cn.bmy.servlet.ServletDemo</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ServletConfigDemo1</servlet-name>
+    <servlet-class>cn.bmy.config.ServletConfigDemo1</servlet-class>
+    
+    <init-param>
+    	<param-name>xxx</param-name>
+    	<param-value>yyyy</param-value>
+    </init-param>
+    
+    <init-param>
+    	<param-name>name</param-name>
+    	<param-value>bmy</param-value>
+    </init-param>
+    
+     <init-param>
+    	<param-name>password</param-name>
+    	<param-value>123</param-value>
+    </init-param>
+    	
+    <init-param>
+    	<param-name>charset</param-name>
+    	<param-value>UTF-8</param-value>
+    </init-param>
+    
+    <init-param>
+    	<param-name>url</param-name>
+    	<param-value>jdbc:mysql://localhost:3306/test</param-value>
+    </init-param>
+    
+    <init-param>
+    	<param-name>username</param-name>
+    	<param-value>root</param-value>
+    </init-param>
+    
+    <init-param>
+    	<param-name>password</param-name>
+    	<param-value>root</param-value>
+    </init-param>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ServletConfigDemo2</servlet-name>
+    <servlet-class>cn.bmy.config.ServletConfigDemo2</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ServletContextDemo1</servlet-name>
+    <servlet-class>cn.bmy.context.ServletContextDemo1</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ServletContextDemo2</servlet-name>
+    <servlet-class>cn.bmy.context.ServletContextDemo2</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ServletContextDemo3</servlet-name>
+    <servlet-class>cn.bmy.context.ServletContextDemo3</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ServletContextDemo4</servlet-name>
+    <servlet-class>cn.bmy.context.ServletContextDemo4</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>ServletDemo</servlet-name>
+    <url-pattern>/servlet/ServletDemo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletConfigDemo1</servlet-name>
+    <url-pattern>/servlet/ServletConfigDemo1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletConfigDemo2</servlet-name>
+    <url-pattern>/servlet/ServletConfigDemo2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletContextDemo1</servlet-name>
+    <url-pattern>/servlet/ServletContextDemo1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletContextDemo2</servlet-name>
+    <url-pattern>/servlet/ServletContextDemo2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletContextDemo3</servlet-name>
+    <url-pattern>/servlet/ServletContextDemo3</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletContextDemo4</servlet-name>
+    <url-pattern>/servlet/ServletContextDemo4</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

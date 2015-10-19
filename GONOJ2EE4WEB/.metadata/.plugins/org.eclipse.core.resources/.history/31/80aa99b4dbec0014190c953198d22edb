@@ -1,0 +1,68 @@
+package com.yang.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.yang.biz.MemberBiz;
+import com.yang.biz.impl.MemberBizImpl;
+import com.yang.entity.Memberinfo;
+
+public class MemberServlet extends HttpServlet {
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		this.doPost(request, response);
+	}
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		request.setCharacterEncoding("utf-8");
+		String flag=request.getParameter("flag");
+		
+		String memberName=request.getParameter("memberName");
+		String memberPass=request.getParameter("memberPass");
+		
+		Memberinfo loginMember=new Memberinfo();
+		loginMember.setMemberName(memberName);
+		loginMember.setMemberPass(memberPass);
+		
+		MemberBiz memberBiz=new MemberBizImpl();
+		
+		if(flag.equals("doRegister")){
+			String memberSex=request.getParameter("sex");
+			String memberQq=request.getParameter("qq");
+			String memberEmail=request.getParameter("email");
+			
+			loginMember.setSex(memberSex);
+			loginMember.setQq(memberQq);
+			loginMember.setEmail(memberEmail);
+			int  memberRegister=memberBiz.doRegister(loginMember);
+			if(memberRegister>0){
+				response.sendRedirect("main.jsp");
+			}else{
+				response.sendRedirect("register.jsp");
+			}
+		}
+		if (flag.equals("doLogin")) {
+			Memberinfo memberLogin=memberBiz.doLogin(loginMember);
+			System.out.println(memberLogin.getMemberName()+"------"+memberLogin.getMemberPass());
+			if(memberLogin!=null){
+				//将用户信息保存到session中
+				request.getSession().setAttribute("memberLogin", memberLogin);
+				out.print(memberLogin.getMemberName());
+				//request.getRequestDispatcher("index2.jsp").forward(request, response);
+				//response.sendRedirect("/index2.jsp");
+			}else{
+				response.sendRedirect("main.jsp");
+			}
+		}
+		
+	}
+
+}

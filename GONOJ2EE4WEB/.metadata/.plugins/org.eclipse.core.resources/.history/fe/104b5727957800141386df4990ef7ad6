@@ -1,0 +1,31 @@
+package cn.bmy.web.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+//更新用户角色
+public class AddUserRoleServlet extends HttpServlet {
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException 
+	{
+		//得到需要授予角色的用户id
+		String user_id = request.getParameter("user_id");
+		
+		//得到需要授权的所有角色id
+		String role_ids[] = request.getParameterValues("user_id")
+		
+
+	}
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		doGet(request, response);
+	}
+
+}

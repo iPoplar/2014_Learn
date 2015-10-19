@@ -1,0 +1,9 @@
+package com.yang.biz;
+
+import java.util.List;
+
+import com.yang.entity.Safetyinfo;
+
+public interface SafetyBiz {
+	public  List<Safetyinfo> getAll();
+}

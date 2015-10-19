@@ -1,0 +1,38 @@
+package com.yang.dao.impl;
+
+import java.sql.SQLException;
+
+import com.yang.dao.BaseDao;
+import com.yang.dao.MemberDao;
+import com.yang.entity.Memberinfo;
+
+public class MemberDaoImpl extends BaseDao implements MemberDao {
+
+	public Memberinfo doLogin(Memberinfo member) {
+		Memberinfo loginMember=null;
+		String sql="select * from member where memberName=? and memberPass=?";
+		String[] params={member.getMemberName(),member.getMemberPass()};
+		rs=this.execQuery(sql, params);
+		try {
+			while (rs.next()){
+			loginMember=new Memberinfo();
+			loginMember.setMemderId(rs.getInt("memderId"));
+			loginMember.setMemberName(rs.getString("memberName"));
+			loginMember.setMemberPass(rs.getString("memberPass"));
+			loginMember.setSex(rs.getString("sex"));
+			loginMember.setQq(rs.getString("qq"));
+			loginMember.setEmail(rs.getString("email"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return loginMember;
+	}
+
+	public int doRegister(Memberinfo member) {
+		String sql="insert into member(memberName,memberPass,sex,qq,email) values(?,?,?,?,?)";
+		String[] params={member.getMemberName(),member.getMemberPass(),member.getSex(),member.getQq(),member.getEmail()};
+		return this.execUpdate(sql, params);
+	}
+
+}

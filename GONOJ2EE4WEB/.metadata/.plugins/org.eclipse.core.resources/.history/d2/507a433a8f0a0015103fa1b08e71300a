@@ -1,0 +1,22 @@
+function Ajax(config)
+{
+	var cfg = config || {};
+	var url = cig.url;
+	var method = cfg.method;
+	var data = cfg.data;
+	var success = cfg.success || function(){};
+	var failure = cfg.failure || function(){};
+	var dataStr = "";
+	var async = cfg.async;
+	
+	var xmlHttpReq = Ajax.createXMLHttpRequest();
+	prepareXMLHttpRequest(xmlHttpReq);
+	
+	
+	
+	
+	Ajax.creatXMLHttpRequest = function()
+	{
+		
+	};
+}

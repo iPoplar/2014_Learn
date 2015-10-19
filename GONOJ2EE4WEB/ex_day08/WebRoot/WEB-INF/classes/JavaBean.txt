@@ -1,0 +1,15 @@
+为了避免jsp中嵌入java代码，jsp设计了如下标签：
+	eg:
+<jsp:useBean>
+	//id是指从域中查找的变量
+	//class属性必须是指定bean的完整类名,scope是指从哪个域中查找
+	<jsp:useBean id="person" class"cn.bmy.Person" scope="page"></jsp:useBean>
+	
+	在此标签中写入标签体内容时，标签体内容只在实例化bean时执行
+<jsp:setProperty>
+	//jsp:setProperty标签在工作时，它会把字符串自动专成八种基本数据类型
+	//但是，对于复杂类型无法自动类型转换
+	eg：<jsp:setProperty name="person" property="birthday" value="<%=new Date() %>"/>
+	//jsp:setProperty标签可以使用请求参数为bean属性赋值
+	eg:<jsp:setProperty name="person" property="name" >
+	

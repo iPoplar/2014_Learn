@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	
+	<package name="" namespace="/" extends="struts-default">
+	<!-- 
+		<result-types>
+			<result-type name="firstResult" class="com.mec.blogSystem.result.FirstResult"></result-type>
+			<result-type name="myJsonType" class="com.mec.blogSystem.result.JsonTypeResult"></result-type>
+		</result-types>
+		<interceptors>
+			<interceptor name="checkLogin" class="com.mec.blogSystem.interceptor.CheckLoginInterceptor"></interceptor>
+		</interceptors>
+		
+	 -->
+	 	<result-types>	
+	 		<result-type></result-type>
+	 	</result-types>
+		
+		
+		<action name="regist" class="com.mec.blogSystem.action.user.RegistAction">
+			<result name="FAILURE">./msgPage/error/registError.jsp?errorCode=${errorCode}&amp;errorMsg=${errorMsg}</result>
+			<result name="SUCCESS">./index.html</result>
+		</action>
+		
+		<action name="login" class="com.mec.blogSystem.action.user.LoginAction">
+			<result name="FAILURE">./msgPage/error/loginError.jsp?errorCode=${errorCode}&amp;errorMsg=${errorMsg}</result>
+			<result name="SUCCESS">./main/main.jsp</result>
+		</action>
+		
+		<action name="addBlog" class="com.mec.blogSystem.action.blog.AddBlogAction">
+			<interceptor-ref name="checkLogin"></interceptor-ref>
+			<result type="myJsonType" name="FAILURE">./msgPage/error/addBlogError.jsp?errorCode=${errorCode}&amp;errorMsg=${errorMsg}</result>
+			<result name="SUCCESS">./main/main.jsp</result>
+		</action>
+	</package>
+</struts>

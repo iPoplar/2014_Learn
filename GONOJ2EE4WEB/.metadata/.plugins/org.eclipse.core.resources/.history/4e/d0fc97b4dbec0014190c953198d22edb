@@ -1,0 +1,47 @@
+package com.yang.entity;
+
+public class Memberinfo {
+private int memderId;
+private String memberName;
+private String memberPass;
+private String sex;
+private String qq;
+private String email;
+public int getMemderId() {
+	return memderId;
+}
+public void setMemderId(int memderId) {
+	this.memderId = memderId;
+}
+public String getMemberName() {
+	return memberName;
+}
+public void setMemberName(String memberName) {
+	this.memberName = memberName;
+}
+public String getMemberPass() {
+	return memberPass;
+}
+public void setMemberPass(String memberPass) {
+	this.memberPass = memberPass;
+}
+public String getSex() {
+	return sex;
+}
+public void setSex(String sex) {
+	this.sex = sex;
+}
+public String getQq() {
+	return qq;
+}
+public void setQq(String qq) {
+	this.qq = qq;
+}
+public String getEmail() {
+	return email;
+}
+public void setEmail(String email) {
+	this.email = email;
+}
+
+}

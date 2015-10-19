@@ -1,0 +1,22 @@
+package com.yang.biz.impl;
+
+import java.util.List;
+
+import com.yang.biz.RelativeBiz;
+import com.yang.dao.RelativeDao;
+import com.yang.dao.impl.RelativeDaoImpl;
+import com.yang.entity.Relativeinfo;
+
+public class RelativeBizImpl implements RelativeBiz {
+RelativeDao relativeDao=new RelativeDaoImpl();
+	public int addRelative(Relativeinfo relative) {
+		// TODO Auto-generated method stub
+		return relativeDao.addRelative(relative);
+	}
+
+	public List<Relativeinfo> getAll() {
+		// TODO Auto-generated method stub
+		return relativeDao.getAll();
+	}
+
+}

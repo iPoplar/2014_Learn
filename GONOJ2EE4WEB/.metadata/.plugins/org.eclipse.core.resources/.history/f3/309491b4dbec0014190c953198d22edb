@@ -1,0 +1,13 @@
+package com.yang.biz;
+
+import java.util.List;
+
+import com.yang.entity.Messageinfo;;
+
+public interface MessageBiz {
+	public List<Messageinfo> getAllMessages();
+	public int addMessage(Messageinfo message);
+	public int updateMessage(Messageinfo message);
+	public int deleteMessage(int messageId);
+	public Messageinfo getMessageById(int messageId);
+}

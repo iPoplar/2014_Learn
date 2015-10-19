@@ -1,0 +1,33 @@
+package com.yang.biz.impl;
+
+import java.util.List;
+
+import com.yang.biz.MessageBiz;
+import com.yang.dao.MessageDao;
+import com.yang.dao.impl.MessageDaoImpl;
+import com.yang.entity.Messageinfo;
+
+public class MessageBizImpl implements MessageBiz {
+	private MessageDao messageDao = new MessageDaoImpl();
+	
+	public int addMessage(Messageinfo message) {
+		return messageDao.addMessage(message);
+	}
+
+	public int deleteMessage(int messageId) {
+		return messageDao.deleteMessage(messageId);
+	}
+
+	public List<Messageinfo> getAllMessages() {
+		return messageDao.getAllMessages();
+	}
+
+	public Messageinfo getMessageById(int messageId) {
+		return messageDao.getMessageById(messageId);
+	}
+
+	public int updateMessage(Messageinfo message) {
+		return messageDao.updateMessage(message);
+	}
+
+}

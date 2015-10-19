@@ -1,0 +1,36 @@
+body{ 
+		background:lightgray;
+	}
+
+	#LoginBox{ 
+		height: 300px;
+		width:400px;
+		position: absolute;
+		top:20%;
+		left:35%;
+	}
+	
+	table{ 
+		height: 300px;
+		width:400px;
+		margin:0 auto;
+	}
+	.headLine{ 
+		font-size: 18pt;
+		font-weight: bold;
+		font-family: 微软雅黑;
+		text-align: center;
+	}
+
+	tr{ 
+		height: 27px;
+	}
+
+	td{ 
+		background:pink;
+		height:25px;
+	}
+	
+	td input{ 
+		height: 25px;
+	}

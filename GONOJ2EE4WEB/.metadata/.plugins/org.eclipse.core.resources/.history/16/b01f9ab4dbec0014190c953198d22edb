@@ -1,0 +1,54 @@
+package com.yang.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.yang.biz.MessageBiz;
+import com.yang.biz.impl.MessageBizImpl;
+import com.yang.entity.Messageinfo;
+
+public class MessageServlet extends HttpServlet {
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		this.doPost(request, response);
+	}
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		String flag=request.getParameter("flag");
+		MessageBiz messageBiz= new MessageBizImpl(); 
+		
+		if("message".equals(flag)){
+			String author=request.getParameter("author");
+			String messageTitle=request.getParameter("messageTitle");
+			String messageContent=request.getParameter("messageContent");
+			Messageinfo message=new Messageinfo();
+			message.setAuthor(author);
+			message.setMessageTitle(messageTitle);
+			message.setMessageContent(messageContent);
+			
+			int result = messageBiz.addMessage(message);
+			if(result>0){
+				response.sendRedirect("MessageServlet?flag=searchMesage");
+			}else{
+				response.sendRedirect("message.jsp");
+			}
+		}
+		
+		if ("searchMesage".equals(flag)) {
+			//展示已有留言
+			List<Messageinfo> list=messageBiz.getAllMessages();
+			request.getSession().setAttribute("list", list);
+			response.sendRedirect("searchMessage.jsp");
+		}
+	}
+
+}

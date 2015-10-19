@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	 <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+<!-- 
+	<package name="hello" namespace="/" extends="json-default" >
+		<action name="testJson" class="com.mec.ajax.action.TestJsonAction">
+			<result name="SUCCESS" type="json">/index.jsp</result>
+		</action>
+		
+		<action name="login" class="com.mec.ajax.action.LoginAction">
+			<result name="FAILURE">./msgPage/error/loginError.jsp?errorCode=${errorCode}&amp;errorMsg=${errorMsg}</result>
+			<result name="SUCCESS">./main/main.jsp</result>
+		</action>
+	</package>
+	
+	 -->
+</struts>

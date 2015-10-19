@@ -1,0 +1,42 @@
+package com.yang.dao.impl;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.yang.dao.BaseDao;
+import com.yang.dao.RelativeDao;
+import com.yang.entity.Relativeinfo;
+
+public class RelativeDaoImpl extends BaseDao implements RelativeDao {
+
+	public int addRelative(Relativeinfo relative) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public List<Relativeinfo> getAll() {
+		List<Relativeinfo> list=new ArrayList<Relativeinfo>();
+		String sql="select * from relative";
+		rs=this.execQuery(sql, null);
+		try {
+			while (rs.next()) {
+				Relativeinfo relativeinfo=new Relativeinfo();
+				relativeinfo.setRelativeId(rs.getInt("relativeId"));
+				relativeinfo.setReName(rs.getString("reName"));
+				relativeinfo.setReSex(rs.getString("reSex"));
+				relativeinfo.setReAge(rs.getString("reAge"));
+				relativeinfo.setReContent(rs.getString("reContent"));
+				relativeinfo.setRePerson(rs.getString("rePerson"));
+				relativeinfo.setRePhone(rs.getString("rePhone"));
+				
+				list.add(relativeinfo);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+}

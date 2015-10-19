@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libraryInfos>
+<libraryInfo home="C:\Program Files (x86)\Java\jdk1.7.0_25" version="1.7.0_25">
+<bootpath>
+<entry path="C:\Program Files (x86)\Java\jdk1.7.0_25\jre\lib\resources.jar"/>
+<entry path="C:\Program Files (x86)\Java\jdk1.7.0_25\jre\lib\rt.jar"/>
+<entry path="C:\Program Files (x86)\Java\jdk1.7.0_25\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Program Files (x86)\Java\jdk1.7.0_25\jre\lib\jsse.jar"/>
+<entry path="C:\Program Files (x86)\Java\jdk1.7.0_25\jre\lib\jce.jar"/>
+<entry path="C:\Program Files (x86)\Java\jdk1.7.0_25\jre\lib\charsets.jar"/>
+<entry path="C:\Program Files (x86)\Java\jdk1.7.0_25\jre\lib\jfr.jar"/>
+<entry path="C:\Program Files (x86)\Java\jdk1.7.0_25\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Program Files (x86)\Java\jdk1.7.0_25\jre\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Program Files (x86)\Java\jdk1.7.0_25\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="D:\Program Files\jre" version="1.5.0_11">
+<bootpath>
+<entry path="D:\Program Files\jre\lib\rt.jar"/>
+<entry path="D:\Program Files\jre\lib\i18n.jar"/>
+<entry path="D:\Program Files\jre\lib\sunrsasign.jar"/>
+<entry path="D:\Program Files\jre\lib\jsse.jar"/>
+<entry path="D:\Program Files\jre\lib\jce.jar"/>
+<entry path="D:\Program Files\jre\lib\charsets.jar"/>
+<entry path="D:\Program Files\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="D:\Program Files\jre\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="D:\Program Files\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="D:\Program Files" version="1.5.0_11">
+<bootpath>
+<entry path="D:\Program Files\jre\lib\rt.jar"/>
+<entry path="D:\Program Files\jre\lib\i18n.jar"/>
+<entry path="D:\Program Files\jre\lib\sunrsasign.jar"/>
+<entry path="D:\Program Files\jre\lib\jsse.jar"/>
+<entry path="D:\Program Files\jre\lib\jce.jar"/>
+<entry path="D:\Program Files\jre\lib\charsets.jar"/>
+<entry path="D:\Program Files\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="D:\Program Files\jre\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="D:\Program Files\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

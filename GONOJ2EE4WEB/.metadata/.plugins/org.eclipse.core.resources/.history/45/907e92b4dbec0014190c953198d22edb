@@ -1,0 +1,19 @@
+package com.yang.biz.impl;
+
+import com.yang.biz.MemberBiz;
+import com.yang.dao.MemberDao;
+import com.yang.dao.impl.MemberDaoImpl;
+import com.yang.entity.Memberinfo;
+
+public class MemberBizImpl implements MemberBiz{
+	MemberDao memberDao=new MemberDaoImpl();
+	//µÇÂ½
+	public Memberinfo doLogin(Memberinfo member) {
+		return memberDao.doLogin(member);
+	}
+	//×¢²á
+	public int doRegister(Memberinfo member) {
+		return memberDao.doRegister(member);
+	}
+
+}

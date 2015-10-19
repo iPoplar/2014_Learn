@@ -1,0 +1,8 @@
+package com.yang.dao;
+
+import com.yang.entity.Memberinfo;
+
+public interface MemberDao {
+public int doRegister(Memberinfo member);
+public Memberinfo doLogin(Memberinfo member);
+}

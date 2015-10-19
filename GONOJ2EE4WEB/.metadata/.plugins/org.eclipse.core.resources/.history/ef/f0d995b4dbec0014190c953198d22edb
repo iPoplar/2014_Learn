@@ -1,0 +1,10 @@
+package com.yang.dao;
+
+import java.util.List;
+
+import com.yang.entity.Relativeinfo;
+
+public interface RelativeDao {
+public int addRelative(Relativeinfo relative);
+public List<Relativeinfo> getAll();
+}

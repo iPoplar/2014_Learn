@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<bean id="impl1" class="cm.dao.Impl1">
+	<!-- 	<property>
+			<name>name</name>
+			<value>12345678</value>
+		</property> -->
+	</bean>
+	<bean id="impl2" class="cm.dao.Impl2"></bean>
+	<!-- 
+		<bean id="web" class="cn.bmy.web.tag.WebViewIp"></bean>
+		<bean id="web" class="cn.bmy.web.tag.WebViewIp"></bean>
+		<bean id="web" class="cn.bmy.web.tag.WebViewIp"></bean>
+	 -->
+</beans>

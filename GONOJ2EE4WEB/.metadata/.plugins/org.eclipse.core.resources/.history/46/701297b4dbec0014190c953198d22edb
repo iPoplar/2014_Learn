@@ -1,0 +1,73 @@
+package com.yang.dao.impl;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.yang.dao.BaseDao;
+import com.yang.dao.MessageDao;
+import com.yang.entity.Messageinfo;;
+
+public class MessageDaoImpl extends BaseDao implements MessageDao {
+
+	public int addMessage(Messageinfo message) {
+		String sql="insert into message(messageTitle,messageContent,createTime,author) values(?,?,curDate(),?)";
+		String[]params={message.getMessageTitle(),message.getMessageContent(),message.getAuthor()};
+		return this.execUpdate(sql, params);
+	}
+
+	public int deleteMessage(int messageId) {
+		String sql="delete from message where messageId="+messageId;
+		return this.execUpdate(sql, null);
+	}
+
+	public List<Messageinfo> getAllMessages() {
+		List<Messageinfo> list= new ArrayList<Messageinfo>();
+		String sql="select * from message";
+		rs = this.execQuery(sql, null);
+		try {
+			while(rs.next()){
+				Messageinfo messageinfo = new Messageinfo();
+				messageinfo.setMessageId(rs.getInt("messageId"));
+				messageinfo.setMessageTitle(rs.getString("messageTitle"));
+				messageinfo.setMessageContent(rs.getString("messageContent"));
+				messageinfo.setCreateTime(rs.getDate("createTime"));
+				messageinfo.setAuthor(rs.getString("author"));
+				list.add(messageinfo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			this.closeAll();
+		}
+		return list;
+	}
+
+	public Messageinfo getMessageById(int messageId) {
+		Messageinfo messageinfo=null;
+		String sql="select * from messageinfo where messageId="+messageId;
+		rs = this.execQuery(sql, null);
+		try {
+			while(rs.next()){
+				messageinfo = new Messageinfo();
+				messageinfo.setMessageId(rs.getInt("messageId"));
+				messageinfo.setMessageTitle(rs.getString("messageTitle"));
+				messageinfo.setMessageContent(rs.getString("messageContent"));
+				messageinfo.setCreateTime(rs.getDate("createTime"));
+				messageinfo.setAuthor(rs.getString("author"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			this.closeAll();
+		}
+		return messageinfo;
+	}
+
+	public int updateMessage(Messageinfo message) {
+		String sql="update message set messageTitle=?,messageContent=?,author=?,createTime=getdate() where messageId=?";
+		String[] params={message.getMessageTitle(),message.getMessageContent(),message.getAuthor(),message.getMessageId()+""};
+		return this.execUpdate(sql, params);
+	}
+
+}

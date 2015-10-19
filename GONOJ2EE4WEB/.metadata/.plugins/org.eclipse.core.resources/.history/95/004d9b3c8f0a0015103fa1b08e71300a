@@ -1,0 +1,51 @@
+function Ajax(config)
+{
+	var cfg = config || {};
+	var url = cig.url;
+	var method = cfg.method;
+	var data = cfg.data;
+	var success = cfg.success || function(){};
+	var failure = cfg.failure || function(){};
+	var dataStr = "";
+	var async = cfg.async;
+	
+	var xmlHttpReq = Ajax.createXMLHttpRequest();
+	prepareXMLHttpRequest(xmlHttpReq);
+	
+	
+	
+	
+	Ajax.creatXMLHttpRequest = function()
+	{
+		var xmlHttpReq = null;
+		if(window.XMLHttpRequest)
+		{
+			Ajax.createXMLHttpRequest = function()
+			{
+				return new XMLHttpRequest();
+			};
+			return Ajax.createXMLHttpRequest();
+		}
+		else
+		{
+			try
+			{
+				xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
+				Ajax.createXMLHttpRequest = function()
+				{
+					return new ActiveXObject("Msxml2.XMLHTTP");
+				};
+				return xmlHttpReq;
+			}catch(e)
+			{
+				xmlHttpReq = new ActiveXObject("Msxm2.XMLHTTP");
+				Ajax.createXMLHttpRequest = function()
+				{
+					return new ActiveXObject("Msxml2.XMLHTTP");
+				};
+				return xmlHttpReq;
+			}
+		}
+	};
+	return xmlHttpReq;
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	 <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+
+	<package name="user" namespace="/" extends="json-default" >
+		<interceptors>
+			<interceptor name="checkLogin" class="com.mec.blogSystem.interceptor.CheckLoginInterceptor"></interceptor>
+			<interceptor-stack name="myDefault">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="checkLogin"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+		<action name="login" class="com.mec.blogSystem.action.LoginAction">
+			<result name="RETURN" type="json"></result>
+		</action>
+		
+		<action name="getUserBlogList" class="com.mec.blogSystem.action.GetUserBlogListAction">
+			<interceptor-ref name="myDefault"></interceptor-ref>
+			<result name="RETURN" type="json"></result>
+		</action>
+	</package>
+</struts>

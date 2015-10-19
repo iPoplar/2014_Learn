@@ -1,0 +1,49 @@
+package com.yang.entity;
+
+import java.io.Serializable;
+
+public class Safetyinfo implements Serializable {
+ private int safetId;
+ private String saName; 
+ private String saSex ; 
+ private String saAge; 
+ private String saContent; 
+ private String saAddr;
+public int getSafetId() {
+	return safetId;
+}
+public void setSafetId(int safetId) {
+	this.safetId = safetId;
+}
+public String getSaName() {
+	return saName;
+}
+public void setSaName(String saName) {
+	this.saName = saName;
+}
+public String getSaSex() {
+	return saSex;
+}
+public void setSaSex(String saSex) {
+	this.saSex = saSex;
+}
+public String getSaAge() {
+	return saAge;
+}
+public void setSaAge(String saAge) {
+	this.saAge = saAge;
+}
+public String getSaContent() {
+	return saContent;
+}
+public void setSaContent(String saContent) {
+	this.saContent = saContent;
+}
+public String getSaAddr() {
+	return saAddr;
+}
+public void setSaAddr(String saAddr) {
+	this.saAddr = saAddr;
+}
+ 
+}

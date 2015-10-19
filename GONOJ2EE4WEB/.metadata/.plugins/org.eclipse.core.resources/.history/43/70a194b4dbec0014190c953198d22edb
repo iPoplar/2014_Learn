@@ -1,0 +1,89 @@
+package com.yang.dao;
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class BaseDao {
+private String DRIVER="com.mysql.jdbc.Driver";
+private String URL="jdbc:mysql://localhost:3306/webyangdata?useUnicode=true&characterEncoding=UTF-8";
+private String USERNAME="root";
+private String PASSWORD="java";
+
+private PreparedStatement psmt;
+private Connection conn;
+public ResultSet rs;
+
+
+	/*
+	 * 获取连接
+	 */
+	public void getConn(){
+		try {
+			Class.forName(DRIVER);
+			conn=DriverManager.getConnection(URL, USERNAME, PASSWORD);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/*
+	 * 关闭所有连接
+	 */
+
+	public void closeAll(){
+		try {
+			if(rs!=null)rs.close();
+			if(psmt!=null)psmt.close();
+			if(conn!=null) conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/*
+	 * 增、删、改
+	 */
+	public int execUpdate(String sql, String[] params){
+		int count=0;
+		getConn();
+		try {
+			psmt=conn.prepareStatement(sql);
+			if(params!=null&&params.length>0){
+				for(int i=0;i<params.length;i++){
+					psmt.setString(i+1, params[i]);
+				}
+			}
+			count=psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			this.closeAll();
+		}
+		return count;
+	}
+	/*
+	 * 查询
+	 */
+	public ResultSet execQuery(String sql, String[] params){
+		getConn();
+		try {
+			psmt=conn.prepareStatement(sql);
+			if(params!=null&&params.length>0){
+				for(int i=0;i<params.length;i++){
+					psmt.setString(i+1, params[i]);
+				}
+			}
+			rs=psmt.executeQuery();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return rs;
+	}
+	
+}

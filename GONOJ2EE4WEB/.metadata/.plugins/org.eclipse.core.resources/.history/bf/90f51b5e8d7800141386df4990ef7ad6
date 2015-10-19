@@ -1,0 +1,47 @@
+package cn.bmy.service;
+
+import java.util.List;
+
+import cn.bmy.dao.PrivilegeDao;
+import cn.bmy.dao.RoleDao;
+import cn.bmy.dao.UserDao;
+import cn.bmy.domain.Privilege;
+import cn.bmy.domain.Role;
+
+//对web层提供所有权限相同的服务
+public class SecurityService
+{
+	private PrivilegeDao pdao = new PrivilegeDao();
+	private RoleDao rdao = new RoleDao();
+	private UserDao udao  = new UserDao();
+	
+	//对web层提供添加权限的服务
+	public void addPrivilege(Privilege p)
+	{
+		pdao.add(p);
+	}
+	
+	//对web层提供查找权限的服务
+	public Privilege findPrivilege(String id)
+	{
+		return pdao.find(id);
+	}
+	
+	//对web层提供得到所有权限的服务
+	public List<Privilege> getAllPrivilege()
+	{
+		return pdao.getAll();
+	}
+
+	//对web层提供添加角色的服务
+	public void addRole(Role role)
+	{
+		rdao.add(role);
+	}
+	
+	//得到某一个角色
+	public Role findRole(String id)
+	{
+		return rdao.find(id);
+	}
+}

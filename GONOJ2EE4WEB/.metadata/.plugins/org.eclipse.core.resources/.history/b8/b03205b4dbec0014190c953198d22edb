@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="webYang"
+  id="myeclipse.1367842002969"
+  context-root="/webYang"
+  j2ee-spec="5.0"
+  archive="webYang.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

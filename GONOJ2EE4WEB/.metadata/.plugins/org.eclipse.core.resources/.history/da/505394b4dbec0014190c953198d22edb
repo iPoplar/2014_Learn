@@ -1,0 +1,17 @@
+package com.yang.biz.impl;
+
+import java.util.List;
+
+import com.yang.biz.SafetyBiz;
+import com.yang.dao.SafetyDao;
+import com.yang.dao.impl.SafetyDaoImpl;
+import com.yang.entity.Safetyinfo;
+
+public class SafetyBizImpl implements SafetyBiz {
+	SafetyDao safetyDao=new SafetyDaoImpl();
+
+	public List<Safetyinfo> getAll() {
+		return safetyDao.getAll();
+	}
+
+}
